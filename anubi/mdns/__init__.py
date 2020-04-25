@@ -8,7 +8,7 @@ The server respond only on IPv4 address and support following record types:
 - A: IPv4 address
 '''
 
-__version__ = '0.0.1a'
+__version__ = '0.0.2a'
 __author__ = 'Andrea Parisotto'
 
 from .mdns import mDNS

@@ -50,6 +50,8 @@ responder.join()
 ```
 
 ## Changelog
+### 0.0.2a
+Update project description and supported python versions for pypi.
 ### 0.0.1a
 First release.
 
