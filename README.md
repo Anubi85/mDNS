@@ -4,6 +4,7 @@ This module is a pure python implementation of a mDNS responder. It provides DNS
 
 ## Python compatibility
 The module is compatible with:
+* Python 3.7
 * Python 3.8
 
 It may be compatible also with previous versions of python but it has never been tested. If you test it with a python version not listed above please notify me so I can update the documentation.
@@ -50,6 +51,8 @@ responder.join()
 ```
 
 ## Changelog
+### 0.0.3a
+Update python requirements for pypi.
 ### 0.0.2a
 Update project description and supported python versions for pypi.
 ### 0.0.1a

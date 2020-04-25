@@ -37,5 +37,5 @@ setuptools.setup(
         'Programming Language :: Python :: 3.8',
     ],
     keywords=['Multicast DNS', 'mDNS'],
-    python_requires='>=3.8',
+    python_requires='>=3',
 )
