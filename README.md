@@ -1,4 +1,4 @@
-# mDNS
+# anubi.mdns
 
 This module is a pure python implementation of a mDNS responder. It provides DNS functionalities into a small network that uses the mDNS protocol.
 
@@ -20,11 +20,11 @@ The version number follow the following pattern: MAJOR.MINOR.PATCH.TAG.
 The project is currently in its alpha state. It used only by me in a small home environement.
 Right now the mDNS responder listen only on IPv4 mDNS addrress and support only type A resource records.
 
-## How to use mDNS
+## How to use anubi.mdns
 Here 's an example of starting a mDNS responder that resolve some host names.
 ```python
 import signal
-import mdns
+import anubi.mdns as mdns
 
 # Create the responder instance
 responder = mdns.mDNS()
@@ -54,5 +54,5 @@ responder.join()
 First release.
 
 ## License
-MIT, see [here](./LICENSE.md) for details.
+MIT, see [here](https://github.com/Anubi85/mDNS/blob/master/LICENSE.md) for details.
 

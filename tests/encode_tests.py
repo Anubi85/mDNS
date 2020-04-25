@@ -1,5 +1,5 @@
 import unittest
-from mdns import DnsPacket, DnsQRecord, DnsType, DnsClass, DnsRRecordA, DnsRRecordNotImplemented, OpCode, RCode
+from anubi.mdns import DnsPacket, DnsQRecord, DnsType, DnsClass, DnsRRecordA, DnsRRecordNotImplemented, OpCode, RCode
 
 class EncodeTests(unittest.TestCase):  
 

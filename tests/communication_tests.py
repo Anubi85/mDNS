@@ -1,5 +1,5 @@
 import unittest
-from mdns import mDNS, DnsRRecordA, DnsPacket, DnsQRecord, DnsType, DnsClass
+from anubi.mdns import mDNS, DnsRRecordA, DnsPacket, DnsQRecord, DnsType, DnsClass
 import socket
 
 class CommunicationTests(unittest.TestCase):

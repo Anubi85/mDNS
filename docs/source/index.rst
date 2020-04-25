@@ -1,14 +1,14 @@
-.. mDNS documentation master file, created by
+.. anubi.mdns documentation master file, created by
    sphinx-quickstart on Sun Apr 19 15:05:10 2020.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to mDNS's documentation!
-================================
+Welcome to anubi.mdns's documentation!
+======================================
 
 This module provides a simple DNS server that respond to muticast queries.
 
-To use it simply :code:`import mdns` and create a mDNS instance, add records to it and start it.
+To use it simply :code:`import anubi.mdns` and create a mDNS instance, add records to it and start it.
 
 The server respond only on IPv4 address and support following record types:
 
@@ -29,21 +29,21 @@ Enums
 ``OpCode``
 ^^^^^^^^^^
 
-.. autoclass:: mdns.OpCode
+.. autoclass:: anubi.mdns.OpCode
    :members:
    :member-order: bysource
 
 ``RCode``
 ^^^^^^^^^
 
-.. autoclass:: mdns.RCode
+.. autoclass:: anubi.mdns.RCode
    :members:
    :member-order: bysource
 
 ``DnsType``
 ^^^^^^^^^^^
 
-.. autoclass:: mdns.DnsType
+.. autoclass:: anubi.mdns.DnsType
    :members:
    :undoc-members:
    :member-order: bysource
@@ -51,7 +51,7 @@ Enums
 ``DnsClass``
 ^^^^^^^^^^^^
 
-.. autoclass:: mdns.DnsClass
+.. autoclass:: anubi.mdns.DnsClass
    :members:
    :undoc-members:
    :member-order: bysource
@@ -64,34 +64,34 @@ DNS Classes
 ``mDNS``
 ^^^^^^^^
 
-.. autoclass:: mdns.mDNS
+.. autoclass:: anubi.mdns.mDNS
     :members:
     :exclude-members: run
 
 ``DnsPacket``
 ^^^^^^^^^^^^^
 
-.. autoclass:: mdns.DnsPacket
+.. autoclass:: anubi.mdns.DnsPacket
     :members:
 
 ``DnsQRecord``
 ^^^^^^^^^^^^^^
 
-.. autoclass:: mdns.DnsQRecord
+.. autoclass:: anubi.mdns.DnsQRecord
     :members:
     :inherited-members:
 
 ``DnsRRecord``
 ^^^^^^^^^^^^^^
 
-.. autoclass:: mdns.DnsRRecord
+.. autoclass:: anubi.mdns.DnsRRecord
     :members:
     :inherited-members:
 
 ``DnsRRecordA``
 ^^^^^^^^^^^^^^^
 
-.. autoclass:: mdns.DnsRRecordA
+.. autoclass:: anubi.mdns.DnsRRecordA
     :members:
     :inherited-members:
 
@@ -102,7 +102,7 @@ DNS Classes
     This class does not actually decode/encode the raw data, just copy those data from/to the given ``bytearray``.
         
 
-.. autoclass:: mdns.DnsRRecordNotImplemented
+.. autoclass:: anubi.mdns.DnsRRecordNotImplemented
     :members:
     :inherited-members:
 
@@ -112,7 +112,7 @@ Utility Classes
 ``Index``
 ^^^^^^^^^
 
-.. autoclass:: mdns.Index
+.. autoclass:: anubi.mdns.Index
     :members:
 
 Decorators
@@ -121,4 +121,4 @@ Decorators
 ``register_subclass``
 ^^^^^^^^^^^^^^^^^^^^^
 
-.. autofunction:: mdns.register_subclass
+.. autofunction:: anubi.mdns.register_subclass

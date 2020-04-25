@@ -5,7 +5,7 @@ with open('README.md') as readme:
     long_description = readme.read()
 #get version number
 version = '0.0.0a0'
-with open('mdns/__init__.py') as info:
+with open('anubi/mdns/__init__.py') as info:
     for line in info:
         if '__version__' in line:
             version = line.split('=')[-1].strip(' \'\n')
@@ -13,17 +13,18 @@ with open('mdns/__init__.py') as info:
 
 
 setuptools.setup(
-    name='mDNS',
+    name='anubi.mdns',
     version=version,
     author='Andrea Parisotto',
     description='',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/Anubi85/mDNS',
     license='MIT',
     include_package_data=True,
     zip_safe=False,
     test_suite='tests',
-    packages = setuptools.find_packages(),
+    packages = setuptools.find_namespace_packages(include=['anubi.*']),
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',

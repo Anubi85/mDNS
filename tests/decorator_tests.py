@@ -1,8 +1,11 @@
 import unittest
-from mdns import DnsRRecord, register_subclass, DnsType
+from anubi.mdns import DnsRRecord, register_subclass, DnsType
 
 class DecoratorTests(unittest.TestCase):
 
+    def tearDown(self):
+        if DnsType.TXT in DnsRRecord._DnsRRecord__subclass_registry:
+            del DnsRRecord._DnsRRecord__subclass_registry[DnsType.TXT]
     def test_register_subclass_decorator_success(self):
         try:
             @register_subclass(DnsType.TXT)

@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'mDNS'
+project = 'anubi.mDNS'
 copyright = '2020, Andrea Parisotto'
 author = 'Andrea Parisotto'
 

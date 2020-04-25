@@ -1,5 +1,5 @@
 import unittest
-from mdns import DnsPacket, DnsType, DnsClass, OpCode, RCode
+from anubi.mdns import DnsPacket, DnsType, DnsClass, OpCode, RCode
 
 class DecodeTests(unittest.TestCase):
     
