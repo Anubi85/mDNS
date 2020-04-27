@@ -1,5 +1,7 @@
 # anubi.mdns
 
+[![Documentation Status](https://readthedocs.org/projects/anubimdns/badge/?version=latest)](https://anubimdns.readthedocs.io/en/latest/?badge=latest)
+
 This module is a pure python implementation of a mDNS responder. It provides DNS functionalities into a small network that uses the mDNS protocol.
 
 ## Python compatibility
