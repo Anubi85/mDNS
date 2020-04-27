@@ -51,6 +51,15 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
+html_sidebars = {
+    '**': [
+        'about.html',
+        'navigation.html',
+        'relations.html',
+        'searchbox.html',
+        'donate.html',
+    ]
+}
 html_theme_options = {
     "description": "A simple pure python implementation of a multicast DNS responder",
     "github_user": "anubi85",

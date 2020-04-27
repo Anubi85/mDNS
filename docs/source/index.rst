@@ -12,13 +12,9 @@ Welcome to anubi.mdns's documentation!
 ======================================
 
 .. image:: https://img.shields.io/pypi/v/anubi.mdns
-    :alt: PyPI
     :target: https://pypi.org/project/anubi.mdns/
 .. image:: https://img.shields.io/pypi/pyversions/anubi.mdns
-    :alt: PyPI - Python Version
 .. image:: https://img.shields.io/github/license/anubi85/mDNS
-    :alt: GitHub
-    :target: https://github.com/Anubi85/mDNS
 
 This module provides a simple DNS server that respond to muticast queries.
 
