@@ -51,6 +51,12 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'alabaster'
+html_theme_options = {
+    "description": "A simple pure python implementation of a multicast DNS responder",
+    "github_user": "anubi85",
+    "github_repo": "mDNS",
+    "fixed_sidebar": True,
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

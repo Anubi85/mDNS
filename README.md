@@ -1,5 +1,8 @@
 # anubi.mdns
 
+[![PyPI](https://img.shields.io/pypi/v/anubi.mdns)](https://pypi.org/project/anubi.mdns/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/anubi.mdns)
+![GitHub](https://img.shields.io/github/license/anubi85/mDNS)
 [![Documentation Status](https://readthedocs.org/projects/anubimdns/badge/?version=latest)](https://anubimdns.readthedocs.io/en/latest/?badge=latest)
 
 This module is a pure python implementation of a mDNS responder. It provides DNS functionalities into a small network that uses the mDNS protocol.
