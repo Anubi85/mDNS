@@ -1,20 +1,13 @@
 import setuptools
+import anubi.mdns
 
 #get long description
 with open('README.md') as readme:
     long_description = readme.read()
-#get version number
-version = '0.0.0a0'
-with open('anubi/mdns/__init__.py') as info:
-    for line in info:
-        if '__version__' in line:
-            version = line.split('=')[-1].strip(' \'\n')
-            break
-
 
 setuptools.setup(
     name='anubi.mdns',
-    version=version,
+    version=anubi.mdns.__version__,
     author='Andrea Parisotto',
     description='A simple pure python implementation of a multicast DNS responder',
     long_description=long_description,

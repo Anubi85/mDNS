@@ -13,16 +13,17 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
+import anubi.mdns
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'anubi.mDNS'
+project = anubi.mdns.__name__
 copyright = '2020, Andrea Parisotto'
 author = 'Andrea Parisotto'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.1a'
+release = anubi.mdns.__version__
 
 
 # -- General configuration ---------------------------------------------------
