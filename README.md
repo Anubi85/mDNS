@@ -56,6 +56,8 @@ responder.join()
 ```
 
 ## Changelog
+### 0.0.4a
+Add support for AAAA DNS records.
 ### 0.0.3a
 Update python requirements for pypi.
 ### 0.0.2a
