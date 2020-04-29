@@ -22,5 +22,15 @@ To use it simply :code:`import anubi.mdns` and create a mDNS instance, add recor
 
 The server respond only on IPv4 address and support following record types:
 
-* A: IPv4 address
+.. table::
+    :align: center
+    :width: 100%
+
+    +-------------+--------------+
+    | Record Type | Description  |
+    +=============+==============+
+    | A           | IPv4 address |
+    +-------------+--------------+
+    | AAAA        | IPv6 address |
+    +-------------+--------------+
    

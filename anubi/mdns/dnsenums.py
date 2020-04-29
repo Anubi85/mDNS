@@ -252,6 +252,22 @@ class DnsType(IntEnum):
         Test if the given value correspond to any of the enum values.
         '''
         return value in cls.__members__.values()
+    @classmethod
+    def is_obsolete(cls, value):
+        '''
+        :param value: The value to be tested.
+        :type value: int
+
+        Test if the given value correspond to a value marked ad obsolete.
+        '''
+        return value in [
+            DnsType.MD, 
+            DnsType.MF, 
+            DnsType.NXT, 
+            DnsType.A6, 
+            DnsType.MAILA, 
+            DnsType.DLV
+            ]
 
 class DnsClass(IntEnum):
     '''

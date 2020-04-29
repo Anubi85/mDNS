@@ -1,7 +1,7 @@
 from ._utility import Index, read_short, read_int, write_short, write_int
 from ._dnsrecord import DnsRecord
 from .dnsenums import DnsType, DnsClass
-from socket import inet_ntoa, inet_aton
+from socket import inet_pton, inet_ntop, AF_INET, AF_INET6
 
 class DnsRRecord(DnsRecord):
     #subclass registry
@@ -161,24 +161,79 @@ class DnsRRecordA(DnsRRecord):
         Represent a DNS Record of type A and allows to manipulate its properties.
         '''
         super().__init__(name, DnsType.A.value, DnsClass.IN.value, ttl)
-        self.address = address
+        self._address = address
     #equality operator
     def __eq__(self, other):
         return (isinstance(other, DnsRRecordA) and
                 super().__eq__(other) and
-                self.address == other.address)
+                self._address == other.address)
+    #properties
+    @property
+    def address(self):
+        '''
+        The record IPv4 address.
+        '''
+        return self._address
+    @address.setter
+    def address(self, value):
+        self._address = value
     #methods
     @classmethod
     def decode(cls, data, idx):
         name, _, class_, ttl, data_size = super().decode(data, idx)
-        instance = DnsRRecordA(name, ttl, inet_ntoa(data[idx: idx + data_size]))
+        instance = DnsRRecordA(name, ttl, inet_ntop(AF_INET, data[idx: idx + data_size]))
         #preserve cache flush bit
         instance._class = class_
         idx.advance(data_size)
         return instance
     def encode(self, data, name_compression_dictionary):
         super().encode(data, name_compression_dictionary)
-        raw_ip = inet_aton(self.address)
+        raw_ip = inet_pton(AF_INET, self._address)
+        write_short(len(raw_ip), data)
+        data.extend(raw_ip)
+
+@register_subclass(DnsType.AAAA)
+class DnsRRecordAAAA(DnsRRecord):
+    def __init__(self, name, ttl, address):
+        '''
+        :param name: The record domain name.
+        :type name: str
+        :param ttl: The record TTL in milliseconds.
+        :type ttl: int
+        :param address: The record IP address (IPv6).
+        :type address: str
+
+        Represent a DNS Record of type AAAA and allows to manipulate its properties.
+        '''
+        super().__init__(name, DnsType.AAAA.value, DnsClass.IN.value, ttl)
+        self._address = address
+    #equality operator
+    def __eq__(self, other):
+        return (isinstance(other, DnsRRecordAAAA) and
+                super().__eq__(other) and
+                self._address == other.address)
+    #properties
+    @property
+    def address(self):
+        '''
+        The record IPv6 address.
+        '''
+        return self._address
+    @address.setter
+    def address(self, value):
+        self._address = value
+    #methods
+    @classmethod
+    def decode(cls, data, idx):
+        name, _, class_, ttl, data_size = super().decode(data, idx)
+        instance = DnsRRecordAAAA(name, ttl, inet_ntop(AF_INET6, data[idx: idx + data_size]))
+        #preserve cache flush bit
+        instance._class = class_
+        idx.advance(data_size)
+        return instance
+    def encode(self, data, name_compression_dictionary):
+        super().encode(data, name_compression_dictionary)
+        raw_ip = inet_pton(AF_INET6, self._address)
         write_short(len(raw_ip), data)
         data.extend(raw_ip)
 
@@ -232,9 +287,15 @@ class DnsRRecordNotImplemented(DnsRRecord):
     @property
     def is_unknown(self):
         '''
-        A flag that indicates if the record represented by the instance is of a known :class:`DnsType` (True) or not (False).
+        A flag that indicates if the record represented by the instance is of a known :class:`DnsType` and :class:`DnsClass` (True) or not (False).
         '''
         return not (DnsType.contains_value(self.record_type) and DnsClass.contains_value(self.record_class))
+    @property
+    def is_obsolete(self):
+        '''
+        A flag that indicates if the record represented by the instance is of an obsolete :class`DnsType` (True) or not (False).
+        '''
+        return not self.is_unknown() and DnsType.is_obsolete(self.record_type)
     #methods
     @classmethod
     def decode(cls, data, idx):

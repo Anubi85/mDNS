@@ -79,6 +79,13 @@ Following classes can be used to manipulate DNS packets and records.
     :members:
     :inherited-members:
 
+``DnsRRecordAAAA``
+^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: anubi.mdns.DnsRRecordAAAA
+    :members:
+    :inherited-members:
+
 ``DnsRRecordNotImplemented``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
