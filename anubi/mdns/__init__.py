@@ -9,7 +9,7 @@ The server respond only on IPv4 address and support following record types:
 - AAAA: IPv6 address
 '''
 
-__version__ = '0.0.4a'
+__version__ = '0.1.0a'
 __author__ = 'Andrea Parisotto'
 
 from .mdns import mDNS

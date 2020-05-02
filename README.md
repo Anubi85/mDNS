@@ -56,14 +56,18 @@ responder.join()
 ```
 
 ## Changelog
+### 0.1.0a
+- Complete support for AAAA DNS records.
+- Add support for additional records.
+  Now the additional records section contains AAAA records (if any) for A query and A records (if any) for AAAA query.
 ### 0.0.4a
-Add support for AAAA DNS records.
+- Add support for AAAA DNS records.
 ### 0.0.3a
-Update python requirements for pypi.
+- Update python requirements for pypi.
 ### 0.0.2a
-Update project description and supported python versions for pypi.
+- Update project description and supported python versions for pypi.
 ### 0.0.1a
-First release.
+- First release.
 
 ## License
 MIT, see [here](https://github.com/Anubi85/mDNS/blob/master/LICENSE.md) for details.
