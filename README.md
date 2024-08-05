@@ -31,6 +31,7 @@ Here 's an example of starting a mDNS responder that resolve some host names.
 ```python
 import signal
 import anubi.mdns as mdns
+from  anubi.mdns.dnsrrecords import  DnsRRecordA
 
 # Create the responder instance
 responder = mdns.mDNS()
